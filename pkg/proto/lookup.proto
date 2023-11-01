@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "holocron/pkg/proto";
+
+package holocron;
+
+// The greeting service definition.
+service Lookup {
+  rpc Query(LookupQueryRequest) returns (LookupQueryResponse) {}
+}
+
+// The request message containing the user's name.
+message LookupQueryRequest {
+  string collection = 1;
+  repeated double embedding = 2;
+  int32 topK = 3; 
+}
+
+message LookupQueryResponse {
+    repeated Embedding embeddings = 1;
+}
+
+message Embedding {
+    repeated double embedding = 1;
+    map<string, string> metadata = 2;
+}

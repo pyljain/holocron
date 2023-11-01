@@ -1,0 +1,8 @@
+embedding:
+  - 122332
+  - 324388
+  - 1282
+
+metadata:
+  content: "hello world"
+  type: "text"
